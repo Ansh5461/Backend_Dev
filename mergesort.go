@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//mergesort in go
 func main() {
 	unsorted := []int{12, 11, 13, 5, 6, 7}
 	fmt.Println("Array before sorting ", unsorted)
