@@ -18,6 +18,10 @@ var(
 	age int
 )
 */
+
+/* enter    go get golang.org/x/tools/cmd/stringer
+then enter stringer -type=Pill
+*/
 func main() {
 	fmt.Println(Paracetamol)
 }
