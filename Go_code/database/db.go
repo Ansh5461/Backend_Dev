@@ -3,6 +3,8 @@ package database
 import (
 	"hello/Go_code/models"
 	"log"
+
+	"github.com/jinzhu/gorm"
 )
 
 func Setup() {
@@ -17,4 +19,8 @@ func Setup() {
 	}
 	db.AutoMigrate(models.Book{})
 	DB = db
+}
+
+func GetDB() *gorm.DB {
+	return DB
 }

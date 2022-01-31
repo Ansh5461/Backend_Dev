@@ -26,3 +26,6 @@ func DeleteBookByID(db *gorm.DB, id string) error {
 func UpdateBookByID(db *gorm.DB, book *models.Book) error {
 	return nil
 }
+func SaveBook(db *gorm.DB) {
+
+}
