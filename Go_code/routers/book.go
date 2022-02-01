@@ -12,5 +12,6 @@ func Router() *gin.Engine {
 		DB: database.GetDB(),
 	}
 	router.GET("/books", api.GetBooks)
+	router.POST("/books", api.SaveBook)
 	return router
 }
