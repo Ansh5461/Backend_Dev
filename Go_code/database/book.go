@@ -25,9 +25,20 @@ func GetBookByID(db *gorm.DB, id string) (*models.Book, error) {
 	return &book, nil
 }
 func DeleteBookByID(db *gorm.DB, id string) error {
+	var book models.Book
+	err := db.Where("id=?", id).Delete(&book).Error
+	if err != nil {
+		return err
+	}
 	return nil
 }
+
 func UpdateBookByID(db *gorm.DB, book *models.Book) error {
+	//Save update value in database, if the value doesn't have primary key, will insert it
+	err := db.Save(book).Error
+	if err != nil {
+		return err
+	}
 	return nil
 }
 func SaveBook(db *gorm.DB, book *models.Book) error {
