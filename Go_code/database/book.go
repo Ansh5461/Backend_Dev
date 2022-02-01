@@ -1,8 +1,6 @@
-package databasee
+package database
 
 import (
-	"hello/Go_code/models"
-
 	"github.com/Ansh5461/Backend_Dev/tree/main/Go_code/models"
 	"github.com/jinzhu/gorm"
 )
