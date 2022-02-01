@@ -1,4 +1,4 @@
-package database
+package databasee
 
 import (
 	"hello/Go_code/models"
@@ -6,6 +6,8 @@ import (
 
 	"github.com/jinzhu/gorm"
 )
+
+var DB *gorm.DB
 
 func Setup() {
 	host := "localhost"
