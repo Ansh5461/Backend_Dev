@@ -2,7 +2,6 @@ package block
 
 import (
 	"fmt"
-	""
 )
 
 func main() {
