@@ -14,9 +14,10 @@ func Setup() {
 	host := "localhost"
 	port := "5432"
 	dbName := "book"
-	userName := "postgres"
-	password := "postgres"
-	db, err := gorm.Open("postgres ", "host= "+host+" port= "+port+" dbName= "+dbName+" sslmode= disable userName= "+userName+" password= "+password)
+	username := "postgres"
+	passowrd := "postgres"
+	args := "host=" + host + " port=" + port + " user=" + username + " dbname=" + dbName + " sslmode=disable password=" + passowrd
+	db, err := gorm.Open("postgres", args)
 	if err != nil {
 		log.Fatal(err)
 	}
