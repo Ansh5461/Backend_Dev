@@ -37,3 +37,26 @@ func (h *Handler) SaveBook(in *gin.Context) {
 	}
 	in.JSON(http.StatusOK, book)
 }
+
+func (h *Handler) GetBookByID(in *gin.Context) {
+	id := in.Params.ByName("id")
+
+	book, err := database.GetBookByID(h.DB, id)
+
+	if err != nil {
+		log.Println(err)
+		in.JSON(http.StatusInternalServerError, err)
+	}
+	in.JSON(http.StatusOK, book)
+}
+func (h *Handler) DeleteBookByID(in *gin.Context) {
+	id := in.Params.ByName("id")
+
+	err := database.DeleteBookByID(h.DB, id)
+
+	if err != nil {
+		log.Println(err)
+		in.JSON(http.StatusInternalServerError, err)
+	}
+	in.JSON(http.StatusOK, id)
+}
