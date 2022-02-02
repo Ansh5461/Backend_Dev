@@ -8,6 +8,8 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
+//github.com/lib/pq
+
 var DB *gorm.DB
 
 func Setup() {
