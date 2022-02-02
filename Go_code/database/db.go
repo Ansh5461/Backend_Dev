@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/Ansh5461/Backend_Dev/tree/main/Go_code/models"
-
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 var DB *gorm.DB
