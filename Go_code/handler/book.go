@@ -66,12 +66,12 @@ func (h *Handler) UpdateBookByID(in *gin.Context) {
 	err := in.BindJSON(&book)
 	if err != nil {
 		log.Println(err)
-		in.JSON(http.StatusInternalServerError, "giving error in binding")
+		in.JSON(http.StatusInternalServerError, err)
 	}
 	err = database.UpdateBookByID(h.DB, &book) //h.DB is fully configured and can give the access of book table
 	if err != nil {
 		log.Println(err)
-		in.JSON(http.StatusInternalServerError, "giving error in updating")
+		in.JSON(http.StatusInternalServerError, err)
 	}
 	in.JSON(http.StatusOK, book)
 }
